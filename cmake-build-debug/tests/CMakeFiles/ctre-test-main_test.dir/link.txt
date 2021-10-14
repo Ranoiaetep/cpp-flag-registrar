@@ -1,2 +1,0 @@
-/usr/bin/ar qc libctre-test-main_test.a CMakeFiles/ctre-test-main_test.dir/main_test.cpp.o
-/usr/bin/ranlib libctre-test-main_test.a

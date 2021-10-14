@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcpp_flag_registrar.a CMakeFiles/cpp_flag_registrar.dir/library.cpp.o
-/usr/bin/ranlib libcpp_flag_registrar.a

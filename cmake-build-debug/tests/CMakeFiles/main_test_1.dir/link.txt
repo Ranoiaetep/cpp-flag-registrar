@@ -1,1 +1,0 @@
-/opt/homebrew/bin/g++-11 -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/main_test_1.dir/main_test_1.cpp.o CMakeFiles/main_test_1.dir/__/library.cpp.o -o main_test_1 
