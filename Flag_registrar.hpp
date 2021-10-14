@@ -13,7 +13,7 @@ namespace fr
 {
     namespace helper
     {
-        consteval std::uintmax_t pow(std::integral auto base, std::integral auto exponent)
+        constexpr std::uintmax_t pow(std::integral auto base, std::integral auto exponent)
         {
             if (exponent >= 1)
             {

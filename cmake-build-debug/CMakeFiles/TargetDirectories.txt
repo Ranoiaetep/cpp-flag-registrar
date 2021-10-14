@@ -38,3 +38,4 @@
 /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug/tests/CMakeFiles/rebuild_cache.dir
 /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug/tests/CMakeFiles/edit_cache.dir
 /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug/tests/CMakeFiles/test.dir
+/Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug/tests/CMakeFiles/register.dir

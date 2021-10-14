@@ -1,3 +1,50 @@
-Start testing: Oct 14 01:33 EDT
+Start testing: Oct 14 02:51 EDT
 ----------------------------------------------------------
-End testing: Oct 14 01:33 EDT
+1/1 Testing: register_test
+1/1 Test: register_test
+Command: "/Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug/tests/register"
+Directory: /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug/tests
+"register_test" start time: Oct 14 02:51 EDT
+Output:
+----------------------------------------------------------
+00 is mapped to 0x00000001
+01 is mapped to 0x00000002
+02 is mapped to 0x00000004
+03 is mapped to 0x00000008
+04 is mapped to 0x00000010
+05 is mapped to 0x00000020
+06 is mapped to 0x00000040
+07 is mapped to 0x00000080
+08 is mapped to 0x00000100
+09 is mapped to 0x00000200
+10 is mapped to 0x00000400
+11 is mapped to 0x00000800
+12 is mapped to 0x00001000
+13 is mapped to 0x00002000
+14 is mapped to 0x00004000
+15 is mapped to 0x00008000
+16 is mapped to 0x00010000
+17 is mapped to 0x00020000
+18 is mapped to 0x00040000
+19 is mapped to 0x00080000
+20 is mapped to 0x00100000
+21 is mapped to 0x00200000
+22 is mapped to 0x00400000
+23 is mapped to 0x00800000
+24 is mapped to 0x01000000
+25 is mapped to 0x02000000
+26 is mapped to 0x04000000
+27 is mapped to 0x08000000
+28 is mapped to 0x10000000
+29 is mapped to 0x20000000
+30 is mapped to 0x40000000
+31 is mapped to 0x80000000
+<end of output>
+Test time =   0.21 sec
+----------------------------------------------------------
+Test Passed.
+"register_test" end time: Oct 14 02:51 EDT
+"register_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 14 02:51 EDT

@@ -529,6 +529,19 @@ NightlyTest/fast:
 	$(MAKE) $(MAKESILENT) -f cpp-static-map/CMakeFiles/NightlyTest.dir/build.make cpp-static-map/CMakeFiles/NightlyTest.dir/build
 .PHONY : NightlyTest/fast
 
+#=============================================================================
+# Target rules for targets named register
+
+# Build rule for target.
+register: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 register
+.PHONY : register
+
+# fast build rule for target.
+register/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/register.dir/build.make tests/CMakeFiles/register.dir/build
+.PHONY : register/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -593,6 +606,7 @@ help:
 	@echo "... Flag_registrar"
 	@echo "... Static_map"
 	@echo "... main"
+	@echo "... register"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

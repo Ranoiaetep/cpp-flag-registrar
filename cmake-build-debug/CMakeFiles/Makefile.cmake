@@ -90,4 +90,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "cpp-static-map/CMakeFiles/ExperimentalConfigure.dir/DependInfo.cmake"
   "cpp-static-map/CMakeFiles/NightlyCoverage.dir/DependInfo.cmake"
   "cpp-static-map/CMakeFiles/NightlyTest.dir/DependInfo.cmake"
+  "tests/CMakeFiles/register.dir/DependInfo.cmake"
   )

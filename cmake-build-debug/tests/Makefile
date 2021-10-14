@@ -126,6 +126,44 @@ depend:
 	cd /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+tests/CMakeFiles/register.dir/rule:
+	cd /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/register.dir/rule
+.PHONY : tests/CMakeFiles/register.dir/rule
+
+# Convenience name for target.
+register: tests/CMakeFiles/register.dir/rule
+.PHONY : register
+
+# fast build rule for target.
+register/fast:
+	cd /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/register.dir/build.make tests/CMakeFiles/register.dir/build
+.PHONY : register/fast
+
+Register.o: Register.cpp.o
+.PHONY : Register.o
+
+# target to build an object file
+Register.cpp.o:
+	cd /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/register.dir/build.make tests/CMakeFiles/register.dir/Register.cpp.o
+.PHONY : Register.cpp.o
+
+Register.i: Register.cpp.i
+.PHONY : Register.i
+
+# target to preprocess a source file
+Register.cpp.i:
+	cd /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/register.dir/build.make tests/CMakeFiles/register.dir/Register.cpp.i
+.PHONY : Register.cpp.i
+
+Register.s: Register.cpp.s
+.PHONY : Register.s
+
+# target to generate assembly for a file
+Register.cpp.s:
+	cd /Users/ranoiaetep/CLionProjects/cpp-flag-registrar/cmake-build-debug && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/register.dir/build.make tests/CMakeFiles/register.dir/Register.cpp.s
+.PHONY : Register.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -135,6 +173,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... register"
+	@echo "... Register.o"
+	@echo "... Register.i"
+	@echo "... Register.s"
 .PHONY : help
 
 

@@ -23,6 +23,8 @@ array
 -
 optional
 -
+ranges
+-
 ./Static_map.tpp
 ../cpp-static-map/Static_map.tpp
 
