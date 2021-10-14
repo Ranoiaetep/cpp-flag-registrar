@@ -13,6 +13,7 @@ constexpr auto map = fr::Register(
         "8","9","10","11","12","13","14","15",
         "16","17","18","19","20","21","22","23",
         "24","25","26","27","28","29","30","31");
+static_assert(map.size() == 32);
 static_assert(*map["0"] == fr::helper::pow(2, 0));
 static_assert(*map["1"] == fr::helper::pow(2, 1));
 static_assert(*map["2"] == fr::helper::pow(2, 2));
