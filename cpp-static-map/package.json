@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "gcc": "git://gcc.gnu.org/git/gcc.git"
-  }
-}
