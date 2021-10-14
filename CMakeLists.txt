@@ -1,15 +1,12 @@
 cmake_minimum_required(VERSION 3.20)
-get_directory_property(hasParent PARENT_DIRECTORY)
-if(NOT hasParent)
-    project(cpp_flag_registrar)
-endif()
+
+add_subdirectory(cpp-static-map)
+project(cpp_flag_registrar)
 
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     set(CMAKE_CXX_COMPILER g++-11)
     set(CMAKE_CXX_STANDARD 20)
 endif()
-
-add_subdirectory(cpp-static-map)
 
 add_library(Flag_registrar INTERFACE Flag_registrar.hpp)
 target_include_directories(Flag_registrar INTERFACE ./)
