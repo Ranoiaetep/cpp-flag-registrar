@@ -1,0 +1,3 @@
+[submodule "cpp-static-map"]
+	path = cpp-static-map
+	url = https://github.com/Ranoiaetep/cpp-static-map.git
