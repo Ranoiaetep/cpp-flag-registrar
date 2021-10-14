@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 project(cpp_flag_registrar)
 
-set(CMAKE_CXX_COMPILER "g++-11")
 set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(cpp-static-map)
