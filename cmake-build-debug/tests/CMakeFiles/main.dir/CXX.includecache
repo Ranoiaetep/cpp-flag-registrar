@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ranoiaetep/CLionProjects/cpp-flag-registrar/library.h
+
+/Users/ranoiaetep/CLionProjects/cpp-flag-registrar/tests/main_test.cpp
+../library.h
+/Users/ranoiaetep/CLionProjects/cpp-flag-registrar/library.h
+iostream
+-
+
