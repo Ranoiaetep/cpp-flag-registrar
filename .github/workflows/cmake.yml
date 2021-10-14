@@ -20,7 +20,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
+      with:
+        submodule: recursive
+        
     - name: Upgrade GCC
       run: sudo apt update && sudo apt install g++-11
 
