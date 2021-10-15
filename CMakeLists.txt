@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.20)
 
 add_subdirectory(cpp-static-map)
-project(cpp_flag_registrar)
+
+if(NOT DEFINED ${CMAKE_PROJECT_NAME})
+    project(cpp_flag_registrar)
+endif()
 
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     set(CMAKE_CXX_COMPILER g++-11)
@@ -11,7 +14,6 @@ endif()
 add_library(Flag_registrar INTERFACE Flag_registrar.hpp)
 target_include_directories(Flag_registrar INTERFACE ./)
 link_libraries(Flag_registrar)
-#link_libraries(Static_map)
 target_link_libraries(Flag_registrar INTERFACE Static_map)
 
 add_executable(main main.cpp)
