@@ -8,7 +8,7 @@
 #include <bitset>
 #include <iomanip>
 
-constexpr auto map = MAKE_REGISTER(
+constexpr auto map = MAKE_REGISTRAR(
         "hello", "I'm fine", "Ok", "\\??", "12345", "zZz 123");
 
 static_assert(map.size() == 6);
@@ -18,6 +18,10 @@ static_assert(map["OK"] == fr::helper::pow(2, 2));
 static_assert(map["???"] == fr::helper::pow(2, 3));
 static_assert(map["12345"] == fr::helper::pow(2, 4));
 static_assert(map["ZZZ_123"] == fr::helper::pow(2, 5));
+static_assert(map("HELLO", "12345", "ZZZ_123") == (1 | 16 | 32));
+static_assert(map("HELLO") == (1));
+static_assert(map() == (0));
+//static_assert(map("NOT THERE"));
 
 int main() {
 #pragma unroll 5
@@ -30,5 +34,13 @@ int main() {
         std::cout << " is mapped to 0x";
         std::cout << std::hex << std::setfill('0') << std::setw(8) << value;
         std::cout << std::dec << '\n';
+    }
+    try
+    {
+        map("SOMETHING NOT THERE");
+    }
+    catch (const std::out_of_range &e)
+    {
+        std::cout << "\"SOMETHING NOT THERE\" was not found, because " << e.what();
     }
 }
