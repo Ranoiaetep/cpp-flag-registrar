@@ -4,19 +4,9 @@
 
 #pragma once
 
-#include <Static_map.hpp>
-#include <concepts>
-#include <string_view>
 #include "helper.hpp"
+#include "macros.hpp"
 
-namespace fr
-{
-    constexpr auto Register(std::convertible_to<std::string_view> auto ... flags);
-} // namespace fr
-
-[[maybe_unused]] constexpr auto fr::Register(std::convertible_to<std::string_view> auto ... flags)
-{
-    return helper::register_helper(
-            helper::Binary_sequence<sizeof...(flags)>{},
-            static_cast<std::string_view>(flags)...);
-}
+#ifndef MAKE_REGISTER
+#define MAKE_REGISTER(...) FLAG_REGISTER_MAKE_REGISTER(__VA_ARGS__)
+#endif
