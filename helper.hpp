@@ -25,6 +25,22 @@ namespace fr::helper
 
     constexpr auto make_register(std::convertible_to<std::string_view> auto ... flags);
 
+    template<std::size_t N>
+    struct Registrar : sm::Static_map<std::string_view, std::uintmax_t, N>
+    {
+        constexpr explicit Registrar(sm::Static_map<std::string_view, std::uintmax_t, N> sm)
+        : sm::Static_map<std::string_view, std::uintmax_t, N>(sm)
+        {}
+
+        constexpr std::uintmax_t operator()(auto ... sv) const
+        {
+            if constexpr(sizeof...(sv) > 0)
+                return ((0 | sm::Static_map<std::string_view, std::uintmax_t, N>::operator[](sv)) | ...);
+            else
+                return 0;
+        }
+    };
+
     constexpr auto format = [](char c)
     {
         if (c >= 'a' && c <= 'z')
