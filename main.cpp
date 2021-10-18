@@ -6,7 +6,7 @@
 
 int main()
 {
-    constexpr auto reg = MAKE_REGISTER("hel lo_12-?//\\[KK", "ok", "sure");
+    constexpr auto reg = MAKE_REGISTRAR("hel lo_12-?//\\[KK", "ok", "sure");
     for(const auto& [key, value] : reg)
     {
         std::cout << key << " : " << value << '\n';

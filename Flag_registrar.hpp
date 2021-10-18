@@ -7,6 +7,6 @@
 #include "helper.hpp"
 #include "macros.hpp"
 
-#ifndef MAKE_REGISTER
-#define MAKE_REGISTER(...) FLAG_REGISTER_MAKE_REGISTER(__VA_ARGS__)
+#ifndef MAKE_REGISTRAR
+#define MAKE_REGISTRAR(...) FLAG_REGISTER_MAKE_REGISTRAR(__VA_ARGS__)
 #endif
