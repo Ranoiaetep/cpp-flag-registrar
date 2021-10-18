@@ -1,18 +1,14 @@
 //
 // Created by Peter Cong on 10/14/21.
 //
-#include <Flag_registrar.hpp>
 #include <iostream>
+#include <Flag_registrar.hpp>
 
 int main()
 {
-    constexpr auto map = fr::Register("1", "2", "3");
-    std::cout << map.size() << '\n';
-#pragma unroll 5
-    for(auto [a, b] : map)
+    constexpr auto reg = MAKE_REGISTER("hel lo_12-?//\\[KK", "ok", "sure");
+    for(const auto& [key, value] : reg)
     {
-        std::cout << a << " : " << b << '\n';
+        std::cout << key << " : " << value << '\n';
     }
-    std::cout << map.at_or_default("5") << '\n';
-    std::cout << map["3"] << '\n';
 }
