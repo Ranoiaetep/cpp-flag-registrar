@@ -7,6 +7,8 @@
 #include <cstdint>
 #include <concepts>
 #include <utility>
+#include <string_view>
+#include <Static_map.hpp>
 
 namespace fr::helper
 {
@@ -20,6 +22,19 @@ namespace fr::helper
 
     template<typename ... Flags, auto ... ints>
     constexpr auto register_helper(std::integer_sequence<std::uintmax_t, ints...> /*unused*/, Flags ... flags);
+
+    constexpr auto make_register(std::convertible_to<std::string_view> auto ... flags);
+
+    constexpr auto format = [](char c)
+    {
+        if (c >= 'a' && c <= 'z')
+            return static_cast<char>(c - 32);
+        if (c == ' ' || c == '-' || c == '_')
+            return '_';
+        if (!(c >= 'A' && c <= 'Z') && !(c >= '0' && c <= '9'))
+            return '?';
+        return c;
+    };
 } // namespace fr::helper
 
 constexpr std::uintmax_t fr::helper::pow(std::integral auto base, std::integral auto exponent)
@@ -43,9 +58,6 @@ namespace fr::helper
 {
     template<std::size_t N>
     using Binary_sequence = decltype(make_binary_sequence<N>());
-
-    static_assert(
-            std::is_same_v<Binary_sequence<5>, std::integer_sequence<std::uintmax_t, 0b1, 0b10, 0b100, 0b1000, 0b10000>>);
 }
 
 template<typename ... Flags, auto ... ints>
@@ -53,4 +65,9 @@ constexpr auto fr::helper::register_helper(std::integer_sequence<std::uintmax_t,
 {
     using Result = sm::Static_map<std::string_view, std::uintmax_t, sizeof...(Flags)>;
     return Result(typename Result::Data{std::pair{flags, ints}...});
+}
+
+constexpr auto fr::helper::make_register(std::convertible_to<std::string_view> auto ... flags)
+{
+    return helper::register_helper(helper::make_binary_sequence<sizeof...(flags)>(), static_cast<std::string_view>(flags)...);
 }
