@@ -61,6 +61,6 @@ Each string supplied to `MAKE_REGISTRAR` will be registered to 2<sup>N</sup>.
     ```
   - Now the original string will be formatted by replacing all `z` to `@`
 
-# Prerequisites
+## Prerequisites
 
 C++20 is required, along with [Boost/Preprocessor](https://www.boost.org/doc/libs/1_76_0/libs/preprocessor/doc/index.html) and [Boost/Hana](https://www.boost.org/doc/libs/1_61_0/libs/hana/doc/html/index.html) libraries.
