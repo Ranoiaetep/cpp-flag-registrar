@@ -10,7 +10,11 @@
 #include <string_view>
 
 #ifndef FLAG_REGISTER_CUSTOM_FORMATTER
-#define FLAG_REGISTER_FORMATTER Compile_time_string<N>::format
+    #ifndef FLAG_REGISTER_FORMATTER
+        #define FLAG_REGISTER_FORMATTER Compile_time_string<N>::format
+    #endif
+#else
+    #define FLAG_REGISTER_FORMATTER FLAG_REGISTER_CUSTOM_FORMATTER
 #endif
 
 namespace fr::helper
