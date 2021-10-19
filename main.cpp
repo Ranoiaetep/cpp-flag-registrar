@@ -8,6 +8,7 @@ using namespace fr::literals;
 
 int main()
 {
+    MAKE_REGISTRAR(foo, "ok");
     constexpr auto reg1 = fr::make_registrar<"hel lo_12-?//\\[KK", "ok", "sure">();
     constexpr auto reg2 = fr::make_registrar_k("hel lo_12-?//\\[KK"_k, "ok"_k, "sure"_k);
     for(const auto& [key, value] : reg1)

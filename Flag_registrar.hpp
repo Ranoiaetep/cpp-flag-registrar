@@ -10,7 +10,7 @@
 #include <string_view>
 
 #ifndef MAKE_REGISTRAR
-#define MAKE_REGISTRAR(...) make_registrar<__VA_ARGS__>()
+#define MAKE_REGISTRAR(REG_NAME, ...) constexpr auto REG_NAME##_FLAG = fr::make_registrar<__VA_ARGS__>()
 #endif
 
 namespace fr
