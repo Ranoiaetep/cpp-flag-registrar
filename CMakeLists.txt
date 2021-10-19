@@ -16,9 +16,6 @@ target_include_directories(Flag_registrar INTERFACE ./)
 link_libraries(Flag_registrar)
 target_link_libraries(Flag_registrar INTERFACE Static_map)
 
-find_package(Boost)
-include_directories( ${Boost_INCLUDE_DIRS} )
-
 add_executable(main main.cpp)
 
 include(CTest)
