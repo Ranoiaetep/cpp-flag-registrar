@@ -8,8 +8,8 @@
 #include <bitset>
 #include <iomanip>
 
-constexpr auto map1 = fr::MAKE_REGISTRAR(
-        "hello", "I'm fine", "Ok", "\\??", "12345", "zZz 123");
+constexpr auto map1 = fr::make_registrar<
+        "hello", "I'm fine", "Ok", "\\??", "12345", "zZz 123">();
 
 static_assert(map1.size() == 6);
 static_assert(map1["HELLO"] == fr::helper::pow(2, 0));
@@ -37,6 +37,11 @@ static_assert(map2("hello"_k, "12345"_k, "zzz 123"_k) == (1 | 16 | 32));
 static_assert(map2("hello"_k) == (1));
 static_assert(map2() == (0));
 //static_assert(map2("NOT THERE"));
+
+MAKE_REGISTRAR(FOO, "Hello", "I'm fine", "OK", "\\??");
+static_assert(FOO_FLAG("hello"_k) == (1));
+static_assert(FOO_FLAG("hello"_k, "I?M_FINE") == (1 | 2));
+static_assert(FOO_FLAG("hello"_k, "i.m fine"_k, "OK") == (1 | 2 | 4));
 
 int main() {
 #pragma unroll 5
