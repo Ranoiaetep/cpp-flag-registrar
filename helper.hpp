@@ -32,24 +32,13 @@ namespace fr::helper
         : sm::Static_map<std::string_view, std::uintmax_t, N>(sm)
         {}
 
-        constexpr std::uintmax_t operator()(auto ... sv) const
+        constexpr std::uintmax_t operator()(auto && ... sv) const
         {
             if constexpr(sizeof...(sv) > 0)
-                return ((0 | sm::Static_map<std::string_view, std::uintmax_t, N>::operator[](sv)) | ...);
+                return ((0 | sm::Static_map<std::string_view, std::uintmax_t, N>::operator[](decltype(sv)(sv))) | ...);
             else
                 return 0;
         }
-    };
-
-    constexpr auto format = [](char c)
-    {
-        if (c >= 'a' && c <= 'z')
-            return static_cast<char>(c - 32);
-        if (c == ' ' || c == '-' || c == '_')
-            return '_';
-        if (!(c >= 'A' && c <= 'Z') && !(c >= '0' && c <= '9'))
-            return '?';
-        return c;
     };
 } // namespace fr::helper
 
